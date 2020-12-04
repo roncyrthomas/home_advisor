@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_advisor/app_theme/app_colors.dart';
 import 'package:home_advisor/app_theme/text_styles.dart';
 
-class CategoryTile extends StatelessWidget {
+class MainCategoryTile extends StatelessWidget {
   final String name;
   final String address;
-  CategoryTile({this.name, this.address});
+  MainCategoryTile({this.name, this.address});
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context,

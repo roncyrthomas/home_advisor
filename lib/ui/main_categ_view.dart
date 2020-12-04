@@ -1,7 +1,7 @@
 import 'package:home_advisor/app_theme/app_colors.dart';
 import 'package:home_advisor/app_theme/text_styles.dart';
 import 'package:home_advisor/ui/widgets/bottom_nav_bar.dart';
-import 'package:home_advisor/ui/widgets/category_tile.dart';
+import 'package:home_advisor/ui/widgets/main_category_tile.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 import 'main_categ_viewmodel.dart';
@@ -51,18 +51,21 @@ class MainCategView extends StatelessWidget {
                   height: 20,
                 ),
                 Expanded(
-                  child: GridView.count(
-                    childAspectRatio: (10 / 6),
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 20,
-                    // shrinkWrap: true,
-                    crossAxisCount: 2,
-                    children: List.generate(7, (index) {
-                      return CategoryTile(
-                        name: model.categ[index][0],
-                        address: model.categ[index][1],
-                      );
-                    }),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: GridView.count(
+                      childAspectRatio: (10 / 6),
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 20,
+                      // shrinkWrap: true,
+                      crossAxisCount: 2,
+                      children: List.generate(model.categ.length, (index) {
+                        return MainCategoryTile(
+                          name: model.categ[index][0],
+                          address: model.categ[index][1],
+                        );
+                      }),
+                    ),
                   ),
                 )
               ],

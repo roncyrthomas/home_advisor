@@ -1,6 +1,7 @@
 import 'package:home_advisor/app_theme/app_colors.dart';
 import 'package:home_advisor/app_theme/text_styles.dart';
-import 'package:home_advisor/ui/widgets/category_tile.dart';
+import 'package:home_advisor/ui/widgets/main_category_tile.dart';
+import 'package:home_advisor/ui/widgets/sub_category_tile.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 import 'sub_categ_viewmodel.dart';
@@ -13,20 +14,46 @@ class SubCategView extends StatelessWidget {
           appBar: AppBar(
             actions: [
               Container(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        colors: [AppColor.blGradient1, AppColor.blGradient2])),
                 margin: EdgeInsets.only(right: 5),
                 child: Icon(
                   Icons.search_outlined,
+                  color: Colors.white,
                 ),
               )
             ],
+            leadingWidth: double.infinity,
+            leading: Column(
+              children: [
+                Row(
+                  children: [
+                    Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        "Go Back",
+                        style: AppTextStyles.textStyle(size: 11),
+                      ),
+                    )
+                  ],
+                ),
+                Text(
+                  "Maintenance",
+                  style: AppTextStyles.textStyle(
+                      size: 18, fontType: FontType.regular),
+                )
+              ],
+            ),
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [AppColor.blGradient2, AppColor.blGradient1])),
+            ),
             elevation: 1,
-            backgroundColor: Colors.white,
-            leading: Container(
-                margin: EdgeInsets.only(left: 5),
-                child: Image.asset(model.logo)),
           ),
           body: Container(
             color: Colors.white,
@@ -52,18 +79,20 @@ class SubCategView extends StatelessWidget {
                   height: 20,
                 ),
                 Expanded(
-                  child: GridView.count(
-                    childAspectRatio: (10 / 6),
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 20,
-                    // shrinkWrap: true,
-                    crossAxisCount: 2,
-                    children: List.generate(7, (index) {
-                      return CategoryTile(
-                        name: model.categ[index][0],
-                        address: model.categ[index][1],
-                      );
-                    }),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: GridView.count(
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 20,
+                      // shrinkWrap: true,
+                      crossAxisCount: 2,
+                      children: List.generate(model.categ.length, (index) {
+                        return SubCategoryTile(
+                          name: model.categ[index][0],
+                          address: model.categ[index][1],
+                        );
+                      }),
+                    ),
                   ),
                 )
               ],

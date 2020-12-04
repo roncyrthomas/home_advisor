@@ -1,9 +1,8 @@
 import 'package:stacked/stacked.dart';
 
 class MainCategViewModel extends BaseViewModel {
-  String title = "hai";
   String logo = "lib/images/logo/logo.png";
-  List categ = [
+  List<List<String>> categ = [
     ["Engineering", "lib/images/category_tile/pic2.png"],
     ["Maintenance", "lib/images/category_tile/pic1.png"],
     ["Inspection", "lib/images/category_tile/pic3.png"],

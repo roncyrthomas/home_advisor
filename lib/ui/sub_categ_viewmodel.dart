@@ -1,15 +1,16 @@
 import 'package:stacked/stacked.dart';
 
 class SubCategViewModel extends BaseViewModel {
-  String title = "hai";
-  String logo = "lib/images/logo/logo.png";
   List categ = [
-    ["Engineering", "lib/images/category_tile/pic2.png"],
-    ["Maintenance", "lib/images/category_tile/pic1.png"],
-    ["Inspection", "lib/images/category_tile/pic3.png"],
-    ["Build Materials", "lib/images/category_tile/pic7.png"],
-    ["Fit Outs", "lib/images/category_tile/pic6.png"],
-    ["Promotion", "lib/images/category_tile/pic5.png"],
-    ["Whole Saler", "lib/images/category_tile/pic4.png"]
+    ["Cleaning", "lib/images/category_tile/pic16.png"],
+    ["Painting", "lib/images/category_tile/pic8.png"],
+    ["Gardening", "lib/images/category_tile/pic9.png"],
+    ["A/C works", "lib/images/category_tile/pic17.png"],
+    ["plumbing", "lib/images/category_tile/pic10.png"],
+    ["Laundry", "lib/images/category_tile/pic11.png"],
+    ["Flooring", "lib/images/category_tile/pic12.png"],
+    ["Carpentry", "lib/images/category_tile/pic13.png"],
+    ["Electrical", "lib/images/category_tile/pic15.png"],
+    ["Car Wash", "lib/images/category_tile/pic14.png"]
   ];
 }
