@@ -1,11 +1,11 @@
-import 'package:home_advisor/app_theme/app_colors.dart';
-import 'package:home_advisor/ui/main_categ_view.dart';
-import 'package:home_advisor/ui/widgets/bottom_nav_bar.dart';
-import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
+import 'package:home_advisor/app_theme/app_colors.dart';
+import 'package:stacked/stacked.dart';
+
 import 'home_page_viewmodel.dart';
 
 class HomePageView extends StatelessWidget {
+  static const id = "4";
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<HomePageViewModel>.reactive(
